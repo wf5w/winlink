@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# this uses yad to fill out a form, to post a message to the outbox of pat winlink
+#
+
+# change the from= line to your callsign
+
+from=NOCALL
+
+if [ $from == "NOCALL" ]; then
+  echo patwinlinkmsgform ERROR: you must change the from line in this script to your own callsign.
+  exit 1
+fi
+
+value=$(yad --width 800 --height 600 --center --form --field="to" --field="Subject" --field="Message:TXT")
+
+to=$(echo $value | cut -d'|' -f1)
+subj=$(echo $value | cut -d'|' -f2)
+text=$(echo $value | cut -d'|' -f3)
+
+echo -e $text > temp.txt
+
+cat temp.txt | pat compose $to -r $from -s "$subj"
