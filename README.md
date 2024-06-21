@@ -13,6 +13,9 @@ In this situation, you can have them create their own message and it will post t
 * you need yad: $ sudo apt install yad
 * you need pat winlink installed, using 73Linux by KM4ACK is a great way to do that.
 
+### configuration
+
+You must edit the file, and replace NOCALL with your own callsign. That's it.
 
 
 
