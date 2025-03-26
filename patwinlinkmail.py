@@ -3,7 +3,7 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QScrollArea, QStatusBar, QPushButton
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPlainTextEdit
 from PySide6.QtGui import QShortcut, QKeySequence, QColor
-from PySide6.QtCore import QTimer, Qt
+from PySide6.QtCore import QTimer
 
 
 import sys
@@ -32,8 +32,8 @@ class MainWindow(QMainWindow):
         cssborder = "border: 1px solid gray;"
 
         mainlayout = QVBoxLayout()
-        tolayout = QHBoxLayout()
-        subjlayout = QHBoxLayout()
+        #tolayout = QHBoxLayout()
+        #subjlayout = QHBoxLayout()
 
         widget = QWidget()
         self.setCentralWidget(widget)
@@ -41,6 +41,7 @@ class MainWindow(QMainWindow):
 
         button = QPushButton("Email it!")
         button.setFixedSize(200, 50)
+        button.setDefault(True)
         button.clicked.connect(self.button_clicked)
         button.setStyleSheet('background-color: lawngreen; border: 2px solid blue; border-radius: 20px')
 
@@ -62,11 +63,11 @@ class MainWindow(QMainWindow):
         self.editbox.setStyleSheet(cssborder)
 
         tohbox = QHBoxLayout()
-        tohbox.addWidget(tolabel, alignment=Qt.AlignLeft)
+        tohbox.addWidget(tolabel)
         tohbox.addWidget(self.toeb)
 
         subjhbox = QHBoxLayout()
-        subjhbox.addWidget(subjlabel, alignment=Qt.AlignLeft)
+        subjhbox.addWidget(subjlabel)
         subjhbox.addWidget(self.subjeb)
 
         buttonhbox = QHBoxLayout()
@@ -124,3 +125,4 @@ if __name__ == '__main__':
     window.show()
 
     app.exec()
+    
