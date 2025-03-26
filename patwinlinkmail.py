@@ -3,7 +3,8 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QScrollArea, QStatusBar, QPushButton
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPlainTextEdit
 from PySide6.QtGui import QShortcut, QKeySequence, QColor
-from PySide6.QtCore import QTimer
+from PySide6.QtCore import QTimer, Qt
+
 
 import sys
 from datetime import datetime
@@ -11,25 +12,6 @@ from patwlclass import PatWL
 
 # need to do: pip install pyside6
 # need to put patwlclass.py into site-packages directory
-
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        # Create a shortcut to close the window when Esc is pressed
-        shortcut = QShortcut(QKeySequence("Esc"), self)
-        shortcut.acti#!/usr/bin/env python
-
-from PySide6.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QScrollArea, QStatusBar, QVBoxLayout, QPushButton
-from PySide6.QtWidgets import QWidget, QAbstractItemView
-from PySide6.QtGui import QShortcut, QKeySequence, QColor
-from PySide6.QtCore import Qt
-
-import sys
-from datetime import datetime
-
-
-# need to do: pip install pyside6
 
 class MainWindow(QMainWindow):
     def __init__(self):
